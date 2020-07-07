@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E04ECC6A-8BCB-420C-9CAA-9AA53DCF3DE1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FishFarm</RootNamespace>
+    <AssemblyName>FishFarm</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>screenshot_2019_07_24_wix_logo_maker_1__uyk_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\Downloads\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\..\..\Downloads\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\CashInBLL.cs" />
+    <Compile Include="BLL\cashOutBLL.cs" />
+    <Compile Include="BLL\PondBLL.cs" />
+    <Compile Include="BLL\SalaryBLL.cs" />
+    <Compile Include="BLL\SalesBLL.cs" />
+    <Compile Include="BLL\StockingBLL.cs" />
+    <Compile Include="BLL\UsersBLL.cs" />
+    <Compile Include="DAL\CashInDAL.cs" />
+    <Compile Include="DAL\cashOutDAL.cs" />
+    <Compile Include="DAL\DGVPrinter.cs" />
+    <Compile Include="DAL\PondDAL.cs" />
+    <Compile Include="DAL\SalaryDAL.cs" />
+    <Compile Include="DAL\SalesDAL.cs" />
+    <Compile Include="DAL\StockingDAL.cs" />
+    <Compile Include="DAL\StockingUserDAL.cs" />
+    <Compile Include="DAL\UsersDAL.cs" />
+    <Compile Include="FishFarmDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FishFarmDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmSalaryReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmSalaryReport.Designer.cs">
+      <DependentUpon>frmSalaryReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmCashFlowReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCashFlowReport.Designer.cs">
+      <DependentUpon>frmCashFlowReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmEmail.Designer.cs">
+      <DependentUpon>frmEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmPondReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmPondReport.Designer.cs">
+      <DependentUpon>frmPondReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmSalesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmSalesReport.Designer.cs">
+      <DependentUpon>frmSalesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmUserCashFlow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmUserCashFlow.Designer.cs">
+      <DependentUpon>frmUserCashFlow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmUserDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmUserDashboard.Designer.cs">
+      <DependentUpon>frmUserDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmCashFlow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCashFlow.Designer.cs">
+      <DependentUpon>frmCashFlow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmPond.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmPond.Designer.cs">
+      <DependentUpon>frmPond.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmSalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmSalary.Designer.cs">
+      <DependentUpon>frmSalary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmSales.Designer.cs">
+      <DependentUpon>frmSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmStocking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmStocking.Designer.cs">
+      <DependentUpon>frmStocking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmDashboard.Designer.cs">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\frmUserPond.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmUserPond.Designer.cs">
+      <DependentUpon>frmUserPond.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmStockingReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmStockingReport.Designer.cs">
+      <DependentUpon>frmStockingReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmUserSalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmUserSalary.Designer.cs">
+      <DependentUpon>frmUserSalary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmUserSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmUserSales.Designer.cs">
+      <DependentUpon>frmUserSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmUserStocking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmUserStocking.Designer.cs">
+      <DependentUpon>frmUserStocking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\frmSalaryReport.resx">
+      <DependentUpon>frmSalaryReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmCashFlowReport.resx">
+      <DependentUpon>frmCashFlowReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmEmail.resx">
+      <DependentUpon>frmEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmPondReport.resx">
+      <DependentUpon>frmPondReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmSalesReport.resx">
+      <DependentUpon>frmSalesReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmUserCashFlow.resx">
+      <DependentUpon>frmUserCashFlow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmUserDashboard.resx">
+      <DependentUpon>frmUserDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmCashFlow.resx">
+      <DependentUpon>frmCashFlow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmPond.resx">
+      <DependentUpon>frmPond.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmSalary.resx">
+      <DependentUpon>frmSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmSales.resx">
+      <DependentUpon>frmSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmStocking.resx">
+      <DependentUpon>frmStocking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmDashboard.resx">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\frmUserPond.resx">
+      <DependentUpon>frmUserPond.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmStockingReport.resx">
+      <DependentUpon>frmStockingReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmUserSalary.resx">
+      <DependentUpon>frmUserSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmUserSales.resx">
+      <DependentUpon>frmUserSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmUserStocking.resx">
+      <DependentUpon>frmUserStocking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="FishFarmDataSet.xsc">
+      <DependentUpon>FishFarmDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FishFarmDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FishFarmDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FishFarmDataSet.xss">
+      <DependentUpon>FishFarmDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FishFarm.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FishFarm_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="screenshot_2019_07_24_wix_logo_maker_1__uyk_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
